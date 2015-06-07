@@ -1,9 +1,16 @@
 <div class="container">
-  <h1>Cookbook app</h1>
-  <% @recipes.each do |recipe| %>
-    <h2><%= recipe.title %></h2>
-    <h3><%= recipe.chef %></h3>
-    <h4><%= recipe.ingredients %></h4>
-    <h4><%= recipe.directions %></h4>
-  <% end %>
+  <h1>All recipes</h1>
+  <div class="row">
+    <% @recipes.each do |recipe| %>
+      <div class="col-md-4">
+        <h4>Title: <%= link_to recipe.title, "/recipes/#{recipe.id}" %></h4>
+        <h4>Chef: <%= recipe.chef %></h4>
+        <h4>Ingredients: <%= recipe.ingredients %></h4>
+        <h4>Directions: <%= recipe.directions %></h4>
+        <br>
+        <p><a class="btn btn-primary btn-lg" href="/recipes/<%= recipe.id %>" role="button">Click for more info</a></p>
+        <br><br>
+      </div>
+    <% end %>
+  </div>
 </div>

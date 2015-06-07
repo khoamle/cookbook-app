@@ -1,1 +1,31 @@
-<%= form_tag  %>
+<div class="container">
+  <%= form_tag "/recipes", method: :post do %>
+  <div>
+    <h4>
+      <%= label_tag :title %>
+      <%= text_field_tag :title %>
+    </h4>
+  </div>
+  <div>
+    <h4>
+      <%= label_tag :chef %>
+      <%= text_field_tag :chef %>
+    </h4>
+  </div>
+ <div>
+    <h4>
+      <%= label_tag :ingredients %>
+      <%= text_field_tag :ingredients %>
+    </h4>
+  </div>
+ <div>
+    <h4>
+      <%= label_tag :directions %>
+      <%= text_field_tag :directions %>
+    </h4>
+  </div>
+  <div>
+    <%= submit_tag "Add Recipe" %>
+  </div>
+  <% end %>
+</div>
